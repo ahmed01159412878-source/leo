@@ -1,0 +1,13 @@
+{
+    "activation_codes": {
+        "1234560": {
+            "used": true,
+            "full_name": "احمد طارق ممدوح",
+            "email": "ahmed01159412878@gmail.com",
+            "device_id": "dev_ou5wyz7w1qmn4tq33k",
+            "grade": 1,
+            "is_master": true
+        }
+    },
+    "email_devices": {}
+}

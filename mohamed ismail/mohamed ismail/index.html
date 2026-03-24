@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="title">المنصة التعليمية - Educational Platform</title>
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Outfit:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <span data-i18n="nav_logo" class="logo-text">Leo</span>
+            </a>
+
+            <div class="hamburger">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#hero" data-i18n="nav_home" class="active">الرئيسية</a></li>
+                <li><a href="#grades" data-i18n="nav_grades">المراحل الدراسية</a></li>
+                <li><a href="#study-zone" data-i18n="nav_study">منطقة المذاكرة</a></li>
+                <li><a href="#contact" data-i18n="nav_contact">تواصل معنا</a></li>
+            </ul>
+
+            <div class="nav-controls">
+                <div id="user-profile" class="user-profile" style="display: none;">
+                    <i class="fa-solid fa-circle-user"></i>
+                    <span id="user-name">Student</span>
+                </div>
+                <button id="auth-btn" class="btn btn-outline btn-sm" data-i18n="nav_login">تسجيل الدخول</button>
+                <button id="lang-toggle" class="control-btn" title="تغيير اللغة">
+                    <i class="fa-solid fa-language"></i> <span id="lang-text">EN</span>
+                </button>
+                <button id="theme-toggle" class="control-btn" title="تغيير المظهر">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- AI Bot Container -->
+    <div id="ai-bot-container" class="ai-bot-container">
+        <div class="ai-bot-bubble" id="ai-bot-bubble">
+            <p id="ai-bot-text">مرحباً بك!</p>
+        </div>
+        <div class="ai-bot-avatar">
+            <div class="bot-glow"></div>
+            <i class="fa-solid fa-robot"></i>
+        </div>
+    </div>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero section">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <div class="badge" data-i18n="hero_badge">أفضل منصة تعليمية</div>
+                    <h1 data-i18n="hero_title">رحلتك نحو <span>التفوق</span> تبدأ من هنا</h1>
+                    <p data-i18n="hero_subtitle">نوفر لطلاب المرحلة الثانوية أفضل المصادر التعليمية والاختبارات الدورية
+                        لضمان أعلى الدرجات بطريقة احترافية وممتعة.</p>
+                    <div class="hero-buttons">
+                        <a href="#grades" class="btn btn-primary"><span data-i18n="hero_cta">ابدأ التعلم الآن</span> <i
+                                class="fa-solid fa-arrow-left arrow-icon"></i></a>
+                        <a href="#study-zone" class="btn btn-outline"><span data-i18n="hero_cta_alt">نظم وقتك</span> <i
+                                class="fa-regular fa-clock"></i></a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="graphic-circle"></div>
+                    <div class="floating-icon icon-1"><i class="fa-solid fa-book-open"></i></div>
+                    <div class="floating-icon icon-2"><i class="fa-solid fa-pen-nib"></i></div>
+                    <div class="floating-icon icon-3"><i class="fa-solid fa-language"></i></div>
+                    <img src="https://illustrations.popsy.co/amber/student-going-to-school.svg" alt="Student Reading"
+                        class="hero-img">
+                </div>
+            </div>
+            <div class="wave-bottom">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                    preserveAspectRatio="none">
+                    <path
+                        d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118,137.49,118.86,203.4,96.38,247.95,81.25,285.54,67.62,321.39,56.44Z"
+                        class="shape-fill"></path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- Grades Section -->
+        <section id="grades" class="grades section">
+            <div class="section-header">
+                <h2 data-i18n="grades_title">المراحل الدراسية</h2>
+                <div class="title-underline"></div>
+                <p data-i18n="grades_subtitle">اختر مرحلتك الدراسية للوصول إلى المحتوى التعليمي الخاص بك</p>
+            </div>
+
+            <div class="cards-container">
+                <!-- 1st Secondary -->
+                <div class="grade-card" data-grade="1" style="--card-color: var(--teal-500);">
+                    <div class="card-gradient"></div>
+                    <div class="card-icon"><i class="fa-solid fa-1"></i></div>
+                    <h3 data-i18n="grade_1">الصف الأول الثانوي</h3>
+                    <div class="card-resources">
+                        <a href="#" class="resource-link" data-resource="pdf">
+                            <i class="fa-solid fa-file-pdf"></i>
+                            <span data-i18n="resource_pdf">مكتبة الـ PDF</span>
+                        </a>
+                        <a href="#" class="resource-link" data-resource="course">
+                            <i class="fa-solid fa-video"></i>
+                            <span data-i18n="resource_course">الكورسات والشرح</span>
+                        </a>
+                        <a href="#" class="resource-link exam" data-resource="exam">
+                            <i class="fa-solid fa-file-signature"></i>
+                            <span data-i18n="resource_exam">الامتحانات الشهرية</span>
+                        </a>
+                        <a href="#" class="resource-link quiz" data-resource="Quiz">
+                            <i class="fa-solid fa-bolt"></i>
+                            <span data-i18n="resource_quiz">الإختبارات القصيرة</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 2nd Secondary -->
+                <div class="grade-card" data-grade="2" style="--card-color: var(--blue-500);">
+                    <div class="card-gradient"></div>
+                    <div class="card-icon"><i class="fa-solid fa-2"></i></div>
+                    <h3 data-i18n="grade_2">الصف الثاني الثانوي</h3>
+                    <div class="card-resources">
+                        <a href="#" class="resource-link" data-resource="pdf">
+                            <i class="fa-solid fa-file-pdf"></i>
+                            <span data-i18n="resource_pdf">مكتبة الـ PDF</span>
+                        </a>
+                        <a href="#" class="resource-link" data-resource="course">
+                            <i class="fa-solid fa-video"></i>
+                            <span data-i18n="resource_course">الكورسات والشرح</span>
+                        </a>
+                        <a href="#" class="resource-link exam" data-resource="exam">
+                            <i class="fa-solid fa-file-signature"></i>
+                            <span data-i18n="resource_exam">الامتحانات الشهرية</span>
+                        </a>
+                        <a href="#" class="resource-link quiz" data-resource="Quiz">
+                            <i class="fa-solid fa-bolt"></i>
+                            <span data-i18n="resource_quiz">الإختبارات القصيرة</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 3rd Secondary -->
+                <div class="grade-card" data-grade="3" style="--card-color: var(--indigo-500);">
+                    <div class="card-gradient"></div>
+                    <div class="card-icon"><i class="fa-solid fa-3"></i></div>
+                    <h3 data-i18n="grade_3">الصف الثالث الثانوي</h3>
+                    <div class="card-resources">
+                        <a href="#" class="resource-link" data-resource="pdf">
+                            <i class="fa-solid fa-file-pdf"></i>
+                            <span data-i18n="resource_pdf">مكتبة الـ PDF</span>
+                        </a>
+                        <a href="#" class="resource-link" data-resource="course">
+                            <i class="fa-solid fa-video"></i>
+                            <span data-i18n="resource_course">الكورسات والشرح</span>
+                        </a>
+                        <a href="#" class="resource-link exam" data-resource="exam">
+                            <i class="fa-solid fa-file-signature"></i>
+                            <span data-i18n="resource_exam">الامتحانات الشهرية</span>
+                        </a>
+                        <a href="#" class="resource-link quiz" data-resource="Quiz">
+                            <i class="fa-solid fa-bolt"></i>
+                            <span data-i18n="resource_quiz">الإختبارات القصيرة</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Study Zone (Pomodoro) -->
+        <section id="study-zone" class="study-zone section bg-alt">
+            <div class="section-header">
+                <h2 data-i18n="study_title">منطقة المذاكرة (بومودورو)</h2>
+                <div class="title-underline"></div>
+                <p data-i18n="study_subtitle">حدد وقت المذاكرة وركز على أهدافك بعيداً عن المشتتات</p>
+            </div>
+
+            <div class="pomodoro-wrapper">
+                <div class="glass-panel timer-box">
+                    <div class="timer-circle">
+                        <svg class="progress-ring" height="240" width="240">
+                            <circle class="progress-ring__circle" stroke-width="8" fill="transparent" r="110" cx="120"
+                                cy="120" />
+                        </svg>
+                        <div class="time-inputs">
+                            <input type="number" id="minutes" value="25" min="0" max="99">
+                            <span class="colon">:</span>
+                            <input type="number" id="seconds" value="00" min="0" max="59">
+                        </div>
+                    </div>
+
+                    <div class="timer-controls">
+                        <button id="start-btn" class="t-btn start"><i class="fa-solid fa-play"></i> <span
+                                data-i18n="timer_start">ابدأ</span></button>
+                        <button id="pause-btn" class="t-btn pause"><i class="fa-solid fa-pause"></i> <span
+                                data-i18n="timer_pause">إيقاف</span></button>
+                        <button id="reset-btn" class="t-btn reset"><i class="fa-solid fa-rotate-right"></i> <span
+                                data-i18n="timer_reset">إعادة ضبط</span></button>
+                    </div>
+                    <p id="timer-msg" class="timer-message" data-i18n="timer_msg_idle">جاهز للتركيز؟ اضبط الوقت واضغط
+                        ابدأ.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact section">
+            <div class="section-header">
+                <h2 data-i18n="contact_title">تواصل معنا</h2>
+                <div class="title-underline"></div>
+                <p data-i18n="contact_subtitle">هل لديك استفسار؟ لا تتردد في مراسلتنا</p>
+            </div>
+
+            <div class="contact-wrapper">
+                <div class="contact-info glass-panel">
+                    <h3 data-i18n="contact_info_title">معلومات التواصل</h3>
+                    <ul class="info-list">
+                        <li>
+                            <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
+                            <div>
+                                <h4 data-i18n="contact_location">العنوان</h4>
+                                <p>العياط-المتانيا-سنتر العمدة</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="info-icon"><i class="fa-solid fa-envelope"></i></div>
+                            <div>
+                                <h4 data-i18n="contact_email">البريد الإلكتروني</h4>
+                                <p>support@edupro.com</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="contact-form-box glass-panel">
+                    <form id="contact-form">
+                        <div class="input-row">
+                            <div class="form-group">
+                                <label for="name" data-i18n="form_name">الاسم كامل</label>
+                                <input type="text" id="name" placeholder="أدخل اسمك" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" data-i18n="form_email">البريد الإلكتروني</label>
+                                <input type="email" id="email" placeholder="example@email.com" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="message" data-i18n="form_msg">رسالتك</label>
+                            <textarea id="message" rows="5" placeholder="اكتب رسالتك هنا..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">
+                            <span data-i18n="form_submit">إرسال الرسالة</span>
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-top">
+            <div class="f-brand">
+                <div class="logo">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <span data-i18n="nav_logo">EduPro</span>
+                </div>
+                <p data-i18n="footer_desc">منصتك الأولى للتفوق في المرحلة الثانوية. نقدم لك كافة المصادر والمراجع لضمان
+                    نجاحك.</p>
+                <div class="social-icons">
+                    <a href="#" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="social-btn"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="#" class="social-btn"><i class="fa-brands fa-telegram"></i></a>
+                    <a href="#" class="social-btn"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 <span data-i18n="nav_logo">EduPro</span>. <span data-i18n="footer_rights">جميع الحقوق
+                    محفوظة.</span></p>
+        </div>
+    </footer>
+
+    <!-- Activation Gate -->
+    <div id="activation-gate" class="modal-overlay">
+        <div class="modal-content glass-panel" style="max-width: 450px;">
+            <div class="auth-section">
+                <div style="text-align: center; margin-bottom: 2rem;">
+                    <i class="fa-solid fa-user-shield"
+                        style="font-size: 3.5rem; color: var(--primary); margin-bottom: 1rem;"></i>
+                    <h2 data-i18n="auth_gate_title" style="margin-bottom: 0.5rem;">تفعيل بوابة الطالب</h2>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;">يرجى إدخال بياناتك بدقة للوصول للمنصة</p>
+                </div>
+                <form id="activation-form">
+                    <div class="form-group">
+                        <label for="act-name">الاسم كامل (ثلاثي على الأقل) <span style="color:red;">*</span></label>
+                        <input type="text" id="act-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="act-email">البريد الإلكتروني <span style="color:red;">*</span></label>
+                        <input type="email" id="act-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="act-code">كود التفعيل (ID) <span style="color:red;">*</span></label>
+                        <input type="number" id="act-code" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="act-grade">المرحلة الدراسية <span style="color:red;">*</span></label>
+                        <select id="act-grade" required
+                            style="width: 100%; padding: 1rem 1.25rem; background: var(--bg-alt); border: 1px solid var(--glass-border); border-radius: 12px; color: var(--text-main); font-size: 1rem; outline: none;">
+                            <option value="" disabled selected>اختر سنتك الدراسية</option>
+                            <option value="1">الصف الأول الثانوي</option>
+                            <option value="2">الصف الثاني الثانوي</option>
+                            <option value="3">الصف الثالث الثانوي</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block" style="margin-top: 1rem;">
+                        <i class="fa-solid fa-unlock-keyhole"></i> تأكيد التفعيل والدخول
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Materials Modal Window -->
+    <div id="materials-modal" class="modal-overlay">
+        <div class="modal-content glass-panel materials-panel">
+            <button class="close-materials"><i class="fa-solid fa-xmark"></i></button>
+            <div class="materials-header">
+                <div class="m-icon"><i class="fa-solid fa-folder-open"></i></div>
+                <h2 id="materials-title">المحتوى التعليمي</h2>
+                <p id="materials-subtitle">اختر الملف الذي ترغب في تصفحه</p>
+            </div>
+            <div class="materials-grid" id="materials-grid">
+                <!-- GRADE 1 -->
+                <!-- PDF -->
+                <a href="#" class="material-item" data-grade="1" data-type="pdf"> <i class="fa-solid fa-file-pdf"></i>
+                    <span>Unit 1: Vocabulary & Definitions</span> </a>
+                <a href="#" class="material-item" data-grade="1" data-type="pdf"> <i class="fa-solid fa-file-pdf"></i>
+                    <span>Unit 1: Grammar - Present Simple</span> </a>
+                <a href="#" class="material-item" data-grade="1" data-type="pdf"> <i class="fa-solid fa-file-pdf"></i>
+                    <span>Story: Treasure Island - Chapter 1</span> </a>
+                <a href="#" class="material-item" data-grade="1" data-type="pdf"> <i class="fa-solid fa-file-pdf"></i>
+                    <span>Translation Skills: Basics Part 1</span> </a>
+                <a href="#" class="material-item" data-grade="1" data-type="pdf"> <i class="fa-solid fa-file-pdf"></i>
+                    <span>Unit 2: Vocabulary & Reading</span> </a>
+                <a href="#" class="material-item" data-grade="1" data-type="pdf"> <i class="fa-solid fa-file-pdf"></i>
+                    <span>Unit 2: Grammar - Past Simple</span> </a>
+                <a href="#" class="material-item" data-grade="1" data-type="pdf"> <i class="fa-solid fa-file-pdf"></i>
+                    <span>Writing Skills: Sentence Structure</span> </a>
+                <a href="#" class="material-item" data-grade="1" data-type="pdf"> <i class="fa-solid fa-file-pdf"></i>
+                    <span>Unit 3: Vocabulary Summary</span> </a>
+                <a href="#" class="material-item" data-grade="1" data-type="pdf"> <i class="fa-solid fa-file-pdf"></i>
+                    <span>Grammar Review: Units 1-3</span> </a>
+                <a href="#" class="material-item" data-grade="1" data-type="pdf"> <i class="fa-solid fa-file-pdf"></i>
+                    <span>Exam Night Revision Sheet</span> </a>
+                <!-- Course -->
+                <a href="#" class="material-item" data-grade="1" data-type="course"> <i class="fa-solid fa-video"></i>
+                    <span>Unit 1: Intro & Vocab Session</span> </a>
+                <a href="#" class="material-item" data-grade="1" data-type="course"> <i class="fa-solid fa-video"></i>
+                    <span>Grammar: Tenses Workshop</span> </a>
+                <a href="#" class="material-item" data-grade="1" data-type="course"> <i class="fa-solid fa-video"></i>
+                    <span>Reading: Unit 1 Text Analysis</span> </a>
+                <a href="#" class="material-item" data-grade="1" data-type="course"> <i class="fa-solid fa-video"></i>
+                    <span>Story: Explaining Chapter 1 & 2</span> </a>
+                <a href="#" class="material-item" data-grade="1" data-type="course"> <i class="fa-solid fa-video"></i>
+                    <span>How to Translate: Common Errors</span> </a>
+                <a href="#" class="material-item" data-grade="1" data-type="course"> <i class="fa-solid fa-video"></i>
+                    <span>Unit 2 Full Explanation</span> </a>
+                <a href="#" class="material-item" data-grade="1" data-type="course"> <i class="fa-solid fa-video"></i>
+                    <span>Grammar: Making Questions</span> </a>
+                <a href="#" class="material-item" data-grade="1" data-type="course"> <i class="fa-solid fa-video"></i>
+                    <span>Skills: Writing Paragraphs</span> </a>
+                <a href="#" class="material-item" data-grade="1" data-type="course"> <i class="fa-solid fa-video"></i>
+                    <span>Solving Unit 2 Exercises</span> </a>
+                <a href="#" class="material-item" data-grade="1" data-type="course"> <i class="fa-solid fa-video"></i>
+                    <span>Final Term Revision Video</span> </a>
+                <!-- Exam -->
+                <a href="#" class="material-item" data-grade="1" data-type="exam"> <i
+                        class="fa-solid fa-file-signature"></i> <span>Unit 1 Diagnostic Test</span> </a>
+                <a href="#" class="material-item" data-grade="1" data-type="exam"> <i
+                        class="fa-solid fa-file-signature"></i> <span>Month 1 Evaluation - Oct</span> </a>
+                <a href="#" class="material-item" data-grade="1" data-type="exam"> <i
+                        class="fa-solid fa-file-signature"></i> <span>Grammar Quiz: Present Tenses</span> </a>
+                <a href="#" class="material-item" data-grade="1" data-type="exam"> <i
+                        class="fa-solid fa-file-signature"></i> <span>Vocabulary Speed Test</span> </a>
+                <a href="#" class="material-item" data-grade="1" data-type="exam"> <i
+                        class="fa-solid fa-file-signature"></i> <span>Translation Challenge 1</span> </a>
+                <a href="#" class="material-item" data-grade="1" data-type="exam"> <i
+                        class="fa-solid fa-file-signature"></i> <span>Story Quiz: Chapter 1-3</span> </a>
+                <a href="#" class="material-item" data-grade="1" data-type="exam"> <i
+                        class="fa-solid fa-file-signature"></i> <span>Unit 2 Full Mock Test</span> </a>
+                <a href="#" class="material-item" data-grade="1" data-type="exam"> <i
+                        class="fa-solid fa-file-signature"></i> <span>Month 2 Evaluation - Nov</span> </a>
+                <a href="#" class="material-item" data-grade="1" data-type="exam"> <i
+                        class="fa-solid fa-file-signature"></i> <span>Skills & Composition Exam</span> </a>
+                <a href="#" class="material-item" data-grade="1" data-type="exam"> <i
+                        class="fa-solid fa-file-signature"></i> <span>Comprehensive Term Exam</span> </a>
+                <!-- Quiz -->
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfD_1" target="_blank" class="material-item" data-grade="1" data-type="Quiz"> <i class="fa-solid fa-bolt"></i>
+                    <span>Quiz 1: Unit 1 Basics</span> </a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfD_2" target="_blank" class="material-item" data-grade="1" data-type="Quiz"> <i class="fa-solid fa-bolt"></i>
+                    <span>Quiz 2: Grammar Tenses</span> </a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfD_3" target="_blank" class="material-item" data-grade="1" data-type="Quiz"> <i class="fa-solid fa-bolt"></i>
+                    <span>Quiz 3: Vocabulary Booster</span> </a>
+
+                <!-- GRADE 2 -->
+                <!-- PDF -->
+                <a href="#" class="material-item" data-grade="2" data-type="pdf"> <i class="fa-solid fa-file-pdf"></i>
+                    <span>Unit 1: Staying Healthy - Vocab</span> </a>
+                <a href="#" class="material-item" data-grade="2" data-type="pdf"> <i class="fa-solid fa-file-pdf"></i>
+                    <span>Grammar: Must, Have to, Need to</span> </a>
+                <a href="#" class="material-item" data-grade="2" data-type="pdf"> <i class="fa-solid fa-file-pdf"></i>
+                    <span>Story: King Lear - Chapter 1</span> </a>
+                <a href="#" class="material-item" data-grade="2" data-type="pdf"> <i class="fa-solid fa-file-pdf"></i>
+                    <span>Translation Practice: Level 2</span> </a>
+                <a href="#" class="material-item" data-grade="2" data-type="pdf"> <i class="fa-solid fa-file-pdf"></i>
+                    <span>Unit 2: Food & Festivals Vocab</span> </a>
+                <a href="#" class="material-item" data-grade="2" data-type="pdf"> <i class="fa-solid fa-file-pdf"></i>
+                    <span>Grammar: Adjectives Comparison</span> </a>
+                <a href="#" class="material-item" data-grade="2" data-type="pdf"> <i class="fa-solid fa-file-pdf"></i>
+                    <span>Unit 3: Future of Food</span> </a>
+                <a href="#" class="material-item" data-grade="2" data-type="pdf"> <i class="fa-solid fa-file-pdf"></i>
+                    <span>Grammar: Future Forms</span> </a>
+                <a href="#" class="material-item" data-grade="2" data-type="pdf"> <i class="fa-solid fa-file-pdf"></i>
+                    <span>Advanced Writing: Essay Guide</span> </a>
+                <a href="#" class="material-item" data-grade="2" data-type="pdf"> <i class="fa-solid fa-file-pdf"></i>
+                    <span>Full Curriculum Summary</span> </a>
+                <!-- Course -->
+                <a href="#" class="material-item" data-grade="2" data-type="course"> <i class="fa-solid fa-video"></i>
+                    <span>Unit 1 Video: Obligation Rules</span> </a>
+                <a href="#" class="material-item" data-grade="2" data-type="course"> <i class="fa-solid fa-video"></i>
+                    <span>How to solve Story questions</span> </a>
+                <a href="#" class="material-item" data-grade="2" data-type="course"> <i class="fa-solid fa-video"></i>
+                    <span>Unit 2 Intro & Themes</span> </a>
+                <a href="#" class="material-item" data-grade="2" data-type="course"> <i class="fa-solid fa-video"></i>
+                    <span>Comparison Adjectives Explained</span> </a>
+                <a href="#" class="material-item" data-grade="2" data-type="course"> <i class="fa-solid fa-video"></i>
+                    <span>Skills: Reading Part 1</span> </a>
+                <a href="#" class="material-item" data-grade="2" data-type="course"> <i class="fa-solid fa-video"></i>
+                    <span>Skills: Writing Part 2</span> </a>
+                <a href="#" class="material-item" data-grade="2" data-type="course"> <i class="fa-solid fa-video"></i>
+                    <span>Grammar Mock Practice Session</span> </a>
+                <a href="#" class="material-item" data-grade="2" data-type="course"> <i class="fa-solid fa-video"></i>
+                    <span>Unit 3 Detailed Explanation</span> </a>
+                <a href="#" class="material-item" data-grade="2" data-type="course"> <i class="fa-solid fa-video"></i>
+                    <span>Final Revision Part 1</span> </a>
+                <a href="#" class="material-item" data-grade="2" data-type="course"> <i class="fa-solid fa-video"></i>
+                    <span>Final Revision Part 2</span> </a>
+                <!-- Exam -->
+                <a href="#" class="material-item" data-grade="2" data-type="exam"> <i
+                        class="fa-solid fa-file-signature"></i> <span>Unit 1 Mastery Quiz</span> </a>
+                <a href="#" class="material-item" data-grade="2" data-type="exam"> <i
+                        class="fa-solid fa-file-signature"></i> <span>Month 1 Evaluation Test</span> </a>
+                <a href="#" class="material-item" data-grade="2" data-type="exam"> <i
+                        class="fa-solid fa-file-signature"></i> <span>Grammar Challenge: Modal Verbs</span> </a>
+                <a href="#" class="material-item" data-grade="2" data-type="exam"> <i
+                        class="fa-solid fa-file-signature"></i> <span>Story Quiz: Chapters 1-4</span> </a>
+                <a href="#" class="material-item" data-grade="2" data-type="exam"> <i
+                        class="fa-solid fa-file-signature"></i> <span>Unit 2 Mock Exam</span> </a>
+                <a href="#" class="material-item" data-grade="2" data-type="exam"> <i
+                        class="fa-solid fa-file-signature"></i> <span>Translation Mid-Term Test</span> </a>
+                <a href="#" class="material-item" data-grade="2" data-type="exam"> <i
+                        class="fa-solid fa-file-signature"></i> <span>Month 2 Advanced Test</span> </a>
+                <a href="#" class="material-item" data-grade="2" data-type="exam"> <i
+                        class="fa-solid fa-file-signature"></i> <span>Reading & Listening Exam</span> </a>
+                <a href="#" class="material-item" data-grade="2" data-type="exam"> <i
+                        class="fa-solid fa-file-signature"></i> <span>Skills & Essay Practice Test</span> </a>
+                <a href="#" class="material-item" data-grade="2" data-type="exam"> <i
+                        class="fa-solid fa-file-signature"></i> <span>Full Term Simulation Exam</span> </a>
+                <!-- Quiz -->
+                <a href="https://docs.google.com/forms/d/e/2FAIpQLSfD_1" target="_blank" class="material-item" data-grade="2" data-type="Quiz"> <i class="fa-solid fa-bolt"></i>
+                    <span>Quiz 1: Obligations</span> </a>
+                <a href="https://docs.google.com/forms/d/e/2FAIpQLSfD_2" target="_blank" class="material-item" data-grade="2" data-type="Quiz"> <i class="fa-solid fa-bolt"></i>
+                    <span>Quiz 2: Adjectives</span> </a>
+                <a href="https://docs.google.com/forms/d/e/2FAIpQLSfD_3" target="_blank" class="material-item" data-grade="2" data-type="Quiz"> <i class="fa-solid fa-bolt"></i>
+                    <span>Quiz 3: Future Forms</span> </a>
+
+                <!-- GRADE 3 -->
+                <!-- PDF -->
+                <a href="#" class="material-item" data-grade="3" data-type="pdf"> <i class="fa-solid fa-file-pdf"></i>
+                    <span>Unit 1: Read All About It! - Vocab</span> </a>
+                <a href="#" class="material-item" data-grade="3" data-type="pdf"> <i class="fa-solid fa-file-pdf"></i>
+                    <span>Grammar: Past Simple & Past Continuous</span> </a>
+                <a href="#" class="material-item" data-grade="3" data-type="pdf"> <i class="fa-solid fa-file-pdf"></i>
+                    <span>Story: Great Expectations - Chapter 1</span> </a>
+                <a href="#" class="material-item" data-grade="3" data-type="pdf"> <i class="fa-solid fa-file-pdf"></i>
+                    <span>Advanced Skills: Punctuation Rules</span> </a>
+                <a href="#" class="material-item" data-grade="3" data-type="pdf"> <i class="fa-solid fa-file-pdf"></i>
+                    <span>Unit 2: Women in History - Vocab</span> </a>
+                <a href="#" class="material-item" data-grade="3" data-type="pdf"> <i class="fa-solid fa-file-pdf"></i>
+                    <span>Grammar: Present Perfect Simple</span> </a>
+                <a href="#" class="material-item" data-grade="3" data-type="pdf"> <i class="fa-solid fa-file-pdf"></i>
+                    <span>Skills: Reading Strategies (Advanced)</span> </a>
+                <a href="#" class="material-item" data-grade="3" data-type="pdf"> <i class="fa-solid fa-file-pdf"></i>
+                    <span>Unit 3: Beyond Imagination Vocab</span> </a>
+                <a href="#" class="material-item" data-grade="3" data-type="pdf"> <i class="fa-solid fa-file-pdf"></i>
+                    <span>Translation: Official Exam Phrases</span> </a>
+                <a href="#" class="material-item" data-grade="3" data-type="pdf"> <i class="fa-solid fa-file-pdf"></i>
+                    <span>The Final Ultimate Review Sheet</span> </a>
+                <!-- Course -->
+                <a href="#" class="material-item" data-grade="3" data-type="course"> <i class="fa-solid fa-video"></i>
+                    <span>Unit 1: Full In-depth Explanation</span> </a>
+                <a href="#" class="material-item" data-grade="3" data-type="course"> <i class="fa-solid fa-video"></i>
+                    <span>Grammar Workshop: Tenses Mastery</span> </a>
+                <a href="#" class="material-item" data-grade="3" data-type="course"> <i class="fa-solid fa-video"></i>
+                    <span>Great Expectations: Story Secrets</span> </a>
+                <a href="#" class="material-item" data-grade="3" data-type="course"> <i class="fa-solid fa-video"></i>
+                    <span>Skills Booth: Punctuation & Writing</span> </a>
+                <a href="#" class="material-item" data-grade="3" data-type="course"> <i class="fa-solid fa-video"></i>
+                    <span>Solving Ministry Model Exams 2024</span> </a>
+                <a href="#" class="material-item" data-grade="3" data-type="course"> <i class="fa-solid fa-video"></i>
+                    <span>Unit 2: Historical Context & Vocab</span> </a>
+                <a href="#" class="material-item" data-grade="3" data-type="course"> <i class="fa-solid fa-video"></i>
+                    <span>Skills: Solving Reading Passages</span> </a>
+                <a href="#" class="material-item" data-grade="3" data-type="course"> <i class="fa-solid fa-video"></i>
+                    <span>Grammar: Passive Voice Masterclass</span> </a>
+                <a href="#" class="material-item" data-grade="3" data-type="course"> <i class="fa-solid fa-video"></i>
+                    <span>Night Review: Part 1 (First 4 Units)</span> </a>
+                <a href="#" class="material-item" data-grade="3" data-type="course"> <i class="fa-solid fa-video"></i>
+                    <span>Night Review: Part 2 (Story & Skills)</span> </a>
+                <!-- Exam -->
+                <a href="#" class="material-item" data-grade="3" data-type="exam"> <i
+                        class="fa-solid fa-file-signature"></i> <span>Unit 1 Comprehensive Assessment</span> </a>
+                <a href="#" class="material-item" data-grade="3" data-type="exam"> <i
+                        class="fa-solid fa-file-signature"></i> <span>Grammar Mega Quiz: Units 1-2</span> </a>
+                <a href="#" class="material-item" data-grade="3" data-type="exam"> <i
+                        class="fa-solid fa-file-signature"></i> <span>Story Challenge Chapter 1-6</span> </a>
+                <a href="#" class="material-item" data-grade="3" data-type="exam"> <i
+                        class="fa-solid fa-file-signature"></i> <span>Month 1 Full Mock Exam</span> </a>
+                <a href="#" class="material-item" data-grade="3" data-type="exam"> <i
+                        class="fa-solid fa-file-signature"></i> <span>Skills & Composition Pro Test</span> </a>
+                <a href="#" class="material-item" data-grade="3" data-type="exam"> <i
+                        class="fa-solid fa-file-signature"></i> <span>Translation Mastery Exam</span> </a>
+                <a href="#" class="material-item" data-grade="3" data-type="exam"> <i
+                        class="fa-solid fa-file-signature"></i> <span>Unit 3 & 4 Progress Test</span> </a>
+                <a href="#" class="material-item" data-grade="3" data-type="exam"> <i
+                        class="fa-solid fa-file-signature"></i> <span>Elite Students: Vocabulary Challenge</span> </a>
+                <a href="#" class="material-item" data-grade="3" data-type="exam"> <i
+                        class="fa-solid fa-file-signature"></i> <span>Ministry Guideline Mock Exam 1</span> </a>
+                <a href="#" class="material-item" data-grade="3" data-type="exam"> <i
+                        class="fa-solid fa-file-signature"></i> <span>Final Pre-Result Simulation Exam</span> </a>
+                <!-- Quiz -->
+                <a href="https://docs.google.com/forms/d/e/3FAIpQLSfD_1" target="_blank" class="material-item" data-grade="3" data-type="Quiz"> <i class="fa-solid fa-bolt"></i>
+                    <span>Quiz 1: Advanced Tenses</span> </a>
+                <a href="https://docs.google.com/forms/d/e/3FAIpQLSfD_2" target="_blank" class="material-item" data-grade="3" data-type="Quiz"> <i class="fa-solid fa-bolt"></i>
+                    <span>Quiz 2: Great Expectations Part 1</span> </a>
+                <a href="https://docs.google.com/forms/d/e/3FAIpQLSfD_3" target="_blank" class="material-item" data-grade="3" data-type="Quiz"> <i class="fa-solid fa-bolt"></i>
+                    <span>Quiz 3: Vocab Masterclass</span> </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Alert Toast -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <script src="javas.js"></script>
+</body>
+
+</html>
